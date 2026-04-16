@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+/* ───────── Keyframes ───────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.6); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes checkmark {
+  from { stroke-dashoffset: 100; }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes ripple {
+  0%   { transform: scale(0.8); opacity: 0.6; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+@keyframes recordPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+  50%       { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+}
+
+/* ───────── Utility classes ───────── */
+.animate-fadeIn     { animation: fadeIn 0.45s ease-out both; }
+.animate-slideUp    { animation: slideUp 0.5s ease-out both; }
+.animate-scaleIn    { animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; }
+.animate-ripple     { animation: ripple 1.4s ease-out infinite; }
+.animate-recordPulse{ animation: recordPulse 1.5s ease-in-out infinite; }
+
+.animate-checkmark path {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: checkmark 0.7s ease-out 0.35s forwards;
+}
+
+/* ───────── Global ───────── */
+html { scroll-behavior: smooth; }
+
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: #f8fafc; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+textarea { resize: vertical; }
+*:focus-visible { outline: none; }
